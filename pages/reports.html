@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rapports</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Pour Chart.js -->
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Rapports</h2>
+        <div class="my-4">
+            <h5>Filtres</h5>
+            <form id="reportFilters">
+                <div class="form-group">
+                    <label for="dateRange">Plage de dates</label>
+                    <input type="date" class="form-control" id="startDate">
+                    <input type="date" class="form-control" id="endDate">
+                </div>
+                <!-- Ajoutez d'autres filtres selon les besoins -->
+                <button type="submit" class="btn btn-primary">Générer Rapport</button>
+            </form>
+        </div>
+
+        <div class="my-4">
+            <h5>Résultats</h5>
+            <!-- Emplacement pour le graphique -->
+            <canvas id="reportChart"></canvas>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script>
+        // Exemple de création d'un graphique avec Chart.js
+        const ctx = document.getElementById('reportChart').getContext('2d');
+        const reportChart = new Chart(ctx, {
+            type: 'line', // Changez le type de graphique selon les besoins (bar, line, pie, etc.)
+            data: {
+                labels: ['Janvier', 'Février', 'Mars', 'Avril'], // Exemple de données
+                datasets: [{
+                    label: 'Nombre de ventes',
+                    data: [10, 20, 30, 40], // Exemple de données
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+    <!-- Incluez ici le script pour interagir avec Firebase et générer des données de rapport -->
+</body>
+</html>

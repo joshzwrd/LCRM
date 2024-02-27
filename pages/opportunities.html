@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opportunités</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Opportunités</h2>
+        <button class="btn btn-primary my-3" data-toggle="modal" data-target="#addOpportunityModal">Ajouter une opportunité</button>
+
+        <!-- Modal pour ajouter une opportunité -->
+        <div class="modal fade" id="addOpportunityModal" tabindex="-1" role="dialog" aria-labelledby="addOpportunityModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="addOpportunityModalLabel">Nouvelle Opportunité</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="addOpportunityForm">
+                            <div class="form-group">
+                                <label for="opportunityName">Nom de l'opportunité</label>
+                                <input type="text" class="form-control" id="opportunityName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="potentialAmount">Montant potentiel</label>
+                                <input type="number" class="form-control" id="potentialAmount" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="opportunityPhase">Phase</label>
+                                <select class="form-control" id="opportunityPhase">
+                                    <option>Prospection</option>
+                                    <option>Négociation</option>
+                                    <option>Closure</option>
+                                    <!-- Ajoutez plus d'options selon vos phases d'opportunité -->
+                                </select>
+                            </div>
+                            <!-- Ajoutez plus de champs selon les besoins -->
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                        <button type="submit" class="btn btn-primary" form="addOpportunityForm">Sauvegarder</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tableau des opportunités -->
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Montant potentiel</th>
+                    <th>Phase</th>
+                    <!-- Ajoutez plus de colonnes selon les besoins -->
+                </tr>
+            </thead>
+            <tbody id="opportunitiesList">
+                <!-- Les opportunités seront ajoutées ici dynamiquement -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="../js/main.js"></script>
+    <!-- Incluez ici le script pour interagir avec Firebase -->
+</body>
+</html>

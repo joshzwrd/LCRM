@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paramètres</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Paramètres</h2>
+        <div class="accordion" id="settingsAccordion">
+            <!-- Paramètres de l'utilisateur -->
+            <div class="card">
+                <div class="card-header" id="headingUserSettings">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseUserSettings" aria-expanded="true" aria-controls="collapseUserSettings">
+                            Préférences de l'utilisateur
+                        </button>
+                    </h2>
+                </div>
+
+                <div id="collapseUserSettings" class="collapse show" aria-labelledby="headingUserSettings" data-parent="#settingsAccordion">
+                    <div class="card-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="userEmail">Email</label>
+                                <input type="email" class="form-control" id="userEmail">
+                            </div>
+                            <div class="form-group">
+                                <label for="userName">Nom</label>
+                                <input type="text" class="form-control" id="userName">
+                            </div>
+                            <!-- Ajoutez plus de champs selon les besoins -->
+                            <button type="submit" class="btn btn-primary">Sauvegarder</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- Configuration de l'application -->
+            <div class="card">
+                <div class="card-header" id="headingAppSettings">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseAppSettings" aria-expanded="false" aria-controls="collapseAppSettings">
+                            Configurations de l'application
+                        </button>
+                    </h2>
+                </div>
+                <div id="collapseAppSettings" class="collapse" aria-labelledby="headingAppSettings" data-parent="#settingsAccordion">
+                    <div class="card-body">
+                        <form>
+                            <!-- Ajoutez vos champs de configuration ici -->
+                            <div class="form-group">
+                                <label for="themeSelection">Thème de l'application</label>
+                                <select class="form-control" id="themeSelection">
+                                    <option>Clair</option>
+                                    <option>Sombre</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Appliquer</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- Gestion des droits d'accès -->
+            <!-- Ajoutez une section similaire pour la gestion des droits si nécessaire -->
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="../js/main.js"></script>
+    <!-- Incluez ici le script pour interagir avec Firebase si nécessaire -->
+</body>
+</html>

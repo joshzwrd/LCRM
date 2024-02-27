@@ -1,0 +1,67 @@
+/* Réinitialisation de certains styles par défaut */
+body, h1, h2, h3, h4, h5, h6, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+/* Styles de la barre de navigation */
+.navbar {
+    background-color: #007bff !important;
+}
+
+.nav-link {
+    color: #fff !important;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-link:hover, .nav-link:focus {
+    color: #ccc !important;
+}
+
+/* Styles du Dashboard */
+.container {
+    padding-top: 20px;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #007bff;
+}
+
+/* Animation simple pour les liens */
+.nav-link {
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: #fff;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.nav-link:hover::after, .nav-link:focus::after {
+    width: 100%;
+    left: 0;
+}
+
+/* Améliorations responsives */
+@media (max-width: 768px) {
+    .navbar-brand {
+        font-size: 18px;
+    }
+
+    .nav-link {
+        padding: 0.25rem 0.5rem;
+    }
+}
